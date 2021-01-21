@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winecellar Room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body{margin: 0;padding: 0;}
+
+
+        body {background:black;}
+
+        #mainDiv
+        {
+           
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+            perspective: 800px;
+        }
+        #boxDiv
+        {
+            border: 1px solid white;
+            width: 500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            transform: translateZ(600px);
+        }
+        #boxDiv div
+        {
+            position:absolute;
+            border: 1px solid white;
+            width: 500px;
+            height: 500px;
+        }
+        #front{
+            transform: translateZ(250px) rotateY(180deg);
+        }
+        #back
+        {
+            transform: translateZ(-250px);
+        }
+        #left
+        {
+            transform: rotateY(90deg) translateX(-250px);
+            transform-origin:left;
+        }
+        #right
+        {
+            transform: rotateY(-90deg) translateX(250px);
+            transform-origin:right;
+        }
+        #top
+        {
+            transform: rotateX(-90deg) translateY(-250px);
+            transform-origin:top;
+        }
+        #bottom{
+            transform: rotateX(90deg) translateY(250px);
+            transform-origin:bottom;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id ="mainDiv">
+        <div id ="boxDiv">
+           <div id="front"></div>
+            <div id="back"></div>
+            <div id="left"></div>
+            <div id="right"></div>
+            <div id="top"></div>
+            <div id="bottom"></div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
