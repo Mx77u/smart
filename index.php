@@ -1,4 +1,13 @@
-
+<?php
+// Initialize the session
+  session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <title>Weinkeller App</title>
@@ -37,14 +46,10 @@ body, html {
       <a href="#about" class="w3-button w3-block w3-dark-grey">SORTEN</a>
     </div>
     <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-dark-grey">MEIN WEINKELLER</a>
+      <a href="Winecellar.php" class="w3-button w3-block w3-dark-grey">MEIN WEINKELLER</a>
     </div>
     <div class="w3-col s3">
-   
-    
-    <a href="login.php" class="w3-button w3-block w3-dark-grey">Login</a>
-   
-      
+      <a href="login.php" class="w3-button w3-block w3-dark-grey">MY ACCOUNT</a>
     </div>
   </div>
 </div>
